@@ -32,9 +32,15 @@ annotateGenes <- function(mtx, organism = "mouse"){
   edb <- edb[order(match(edb[[use_geneID]], rownames(mtx))),]
 
   Dupl_GeneName <- duplicated(edb$gene_name)
+  print("dupl length")
   print(length(Dupl_GeneName))
+  print("edb length and dim")
   print(length(edb))
+  print(dim(edb))
+  print("mtx length and dim")
   print(length(mtx))
+  print(dim(mtx))
+  
     
   edb <- edb[!Dupl_GeneName,]
   mtx <- mtx[!Dupl_GeneName,]
