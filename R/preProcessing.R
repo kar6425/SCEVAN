@@ -33,8 +33,8 @@ annotateGenes <- function(mtx, organism = "human"){
 
   Dupl_GeneName <- duplicated(edb$gene_name)
   print(Dupl_GeneName)
-  length(Dupl_GeneName)
-  dim(Dupl_GeneName)
+  print(length(Dupl_GeneName))
+  print(dim(Dupl_GeneName))
   dim(mtx)
     
   edb <- edb[!Dupl_GeneName,]
