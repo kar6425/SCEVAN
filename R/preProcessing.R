@@ -7,7 +7,7 @@
 #' @examples
 #' count_mtx_annot <- annotateGenes(count_mtx)
 #' @export
-annotateGenes <- function(mtx, organism = "human"){
+annotateGenes <- function(mtx, organism = "mouse"){
   library(dplyr)
 
   if(organism == "human"){
@@ -32,10 +32,9 @@ annotateGenes <- function(mtx, organism = "human"){
   edb <- edb[order(match(edb[[use_geneID]], rownames(mtx))),]
 
   Dupl_GeneName <- duplicated(edb$gene_name)
-  print(Dupl_GeneName)
   print(length(Dupl_GeneName))
-  print(dim(Dupl_GeneName))
-  dim(mtx)
+  print(length(edb))
+  print(length(mtx))
     
   edb <- edb[!Dupl_GeneName,]
   mtx <- mtx[!Dupl_GeneName,]
