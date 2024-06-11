@@ -7,7 +7,7 @@
 #' @examples
 #' count_mtx_annot <- annotateGenes(count_mtx)
 #' @export
-annotateGenes <- function(mtx, organism = "mouse"){
+annotateGenes <- function(mtx, organism = "human"){
   library(dplyr)
 
   if(organism == "human"){
