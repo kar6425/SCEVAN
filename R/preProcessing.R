@@ -7,7 +7,7 @@
 #' @examples
 #' count_mtx_annot <- annotateGenes(count_mtx)
 #' @export
-annotateGenes <- function(mtx, organism = "human"){
+annotateGenes <- function(mtx, organism = "mouse"){
   library(dplyr)
 
   if(organism == "human"){
@@ -75,7 +75,7 @@ annotateGenes <- function(mtx, organism = "human"){
 #' @examples
 #' count_mtx_annot <- annotateGenes(count_mtx)
 #' @export
-preprocessingMtx <- function(count_mtx, sample, ngenes_chr=5, perc_genes=0.1, par_cores=20, findConfident = TRUE, AdditionalGeneSets = NULL, SCEVANsignatures = TRUE, organism = "human"){
+preprocessingMtx <- function(count_mtx, sample, ngenes_chr=5, perc_genes=0.1, par_cores=20, findConfident = TRUE, AdditionalGeneSets = NULL, SCEVANsignatures = TRUE, organism = "mouse"){
   
   set.seed(123)
   
