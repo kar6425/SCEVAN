@@ -30,7 +30,15 @@ annotateGenes <- function(mtx, organism = "human"){
   mtx <- mtx[which(rownames(mtx) %in% genes_inters),]
   edb <- edb[which(as.vector(edb[[use_geneID]]) %in% genes_inters),]
   edb <- edb[order(match(edb[[use_geneID]], rownames(mtx))),]
-  
+
+  Dupl_GeneName <- duplicated(edb$gene_name)
+  print(Dupl_GeneName)
+  length(Dupl_GeneName)
+  dim(Dupl_GeneName)
+  dim(mtx)
+    
+  edb <- edb[!Dupl_GeneName,]
+  mtx <- mtx[!Dupl_GeneName,]
   
   if(class(mtx)[1]=="dgCMatrix"){
     mtx_annot <- cbind(edb, as.matrix(mtx))
